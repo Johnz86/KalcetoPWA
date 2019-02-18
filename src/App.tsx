@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { InputStored } from './components/input-stored';
+import { InputSuggest } from './components/input-suggest';
 
 class App extends Component {
   render() {
@@ -12,16 +12,16 @@ class App extends Component {
           <h1>Kalčeto PWA</h1>
           <form>
             <div>
-              <label htmlFor="teamName">Meno tímu</label>
+              <label htmlFor="teamName">Výber tímu</label>
             </div>
             <div>
-              <InputStored name="teamName" placeholder="Meno tímu" list={[{id: "1", text: "Team Super"}, {id: "2", text: "Badasses"},]} />
+              <InputSuggest name="teamName" placeholder="Meno tímu" list={[{id: "1", text: "Team Super"}, {id: "2", text: "Badasses"}, {id: "3", text: "Weaklings"}]} />
             </div>
             <div>
-              <input type="text" name="playerOne" placeholder="Meno prvého hráča" />
+              <InputSuggest name="playerOne" placeholder="Meno hráča" list={[{id: "1", text: "Peter"}, {id: "2", text: "John"}]} />
             </div>
             <div>
-              <input type="text" name="playerTwo" placeholder="Meno druhého hráča" />
+              <InputSuggest name="playerTwo" placeholder="Meno hráča" list={[{id: "1", text: "Peter"}, {id: "2", text: "John"}]} />
             </div>                        
             <button type="submit">Pridaj Tím</button>
           </form>          
