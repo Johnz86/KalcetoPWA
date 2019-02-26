@@ -1,0 +1,60 @@
+.material-button {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    overflow: hidden;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+.material-button .material-icon {
+    left: 0.35em;
+    margin: -1rem 0;
+    margin-left: -1.5rem;
+    opacity: 0;
+    position: relative;
+    top: 0.25rem;
+    transform: scale(0);
+    transition: all 200ms 200ms ease;
+    width: 1.5rem;
+    will-change: opacity, transform, margin-left;
+}
+
+.material-button:hover>.material-icon {
+    margin-left: 0;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 150ms ease-out;
+}
+
+.material-button:active>.material-icon {
+    opacity: 1;
+    width: 1.5rem;
+    transition: 0s;
+}
+
+.material-button::before {
+    border-radius: 60%;
+    content: "";
+    display: block;
+    height: 6rem;
+    margin: -3rem 0;
+    opacity: 0;
+    position: relative;
+    top: 0.5rem;
+    transform: scale(3);
+    transition: 1s;
+    width: 100%;
+    will-change: opacity, transform;
+}
+
+.material-button:active::before {
+    opacity: 0.4;
+    transform: scale(0);
+    transition: 0s;
+}
