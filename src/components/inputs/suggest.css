@@ -61,7 +61,9 @@
     -ms-user-select: none;
     user-select: none;
 }
-
+.c-button:hover::placeholder {
+    color: var(--color-text-primary-on-light);
+}
 .c-button::placeholder { 
     color: #E6E9ED;
 }

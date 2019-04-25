@@ -18,7 +18,7 @@ type State = {
 
 export class AddTeamForm extends React.Component<Props, State> {
     static defaultProps = {
-        teams: [{ id: "1", text: "Team Super" }, { id: "2", text: "Badasses" }, { id: "3", text: "Weaklings" }],
+        teams: [],
     };
 
     readonly state: State = {
@@ -42,10 +42,10 @@ export class AddTeamForm extends React.Component<Props, State> {
                     <InputSuggest name="teamName" placeholder="Meno tímu" list={this.state.teams} />
                 </div>
                 <div>
-                    <InputSuggest name="playerOne" placeholder="Meno hráča" list={[{ id: "1", text: "Peter" }, { id: "2", text: "John" }]} />
+                    <InputSuggest name="playerOne" placeholder="Meno hráča" list={[]} />
                 </div>
                 <div>
-                    <InputSuggest name="playerTwo" placeholder="Meno hráča" list={[{ id: "1", text: "Peter" }, { id: "2", text: "John" }]} />
+                    <InputSuggest name="playerTwo" placeholder="Meno hráča" list={[]} />
                 </div>
                 <Submit text="Pridaj tím"/>
             </form>
