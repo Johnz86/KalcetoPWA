@@ -36,7 +36,7 @@ export class AddTeamForm extends React.Component<Props, State> {
         return (
             <form>
                 <div>
-                    <label htmlFor="teamName">Výber tímu</label>
+                    <label htmlFor="teamName">Vytvor tím</label>
                 </div>
                 <div>
                     <InputSuggest name="teamName" placeholder="Meno tímu" list={this.state.teams} />

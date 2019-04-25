@@ -8,7 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-body App-box">
-          <img src={logo} className="App-logo" alt="logo" />
+          <div className="App-motive">
+            <img src={logo} className="App-logo" alt="logo" />
+          </div>
           <h1>Kalčeto PWA</h1>
           <AddTeamForm players={[]} />
         </div>

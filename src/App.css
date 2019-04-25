@@ -30,6 +30,11 @@
   z-index: 1000;
 }
 
+.App-motive {
+  background: #ffffff40;
+  border-radius: 50%;
+}
+
 .App-link {
   color: #61dafb;
 }
