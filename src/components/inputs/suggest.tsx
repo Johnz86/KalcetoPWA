@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import './style.css';
+import './suggest.css';
 
 interface InputSuggestState {
     filterText: string;
