@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="App-body App-box">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>Kalčeto PWA</h1>
           <form>
@@ -38,7 +38,7 @@ class App extends Component {
             </div>
             <button type="submit">Pridaj Výsledok</button>
           </form>
-        </header>
+        </div>
       </div>
     );
   }

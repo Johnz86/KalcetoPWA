@@ -1,3 +1,40 @@
+
+:root {
+  --size-font: calc(10px + 2vmin);
+  --size-space: calc(10px + 2vmin);
+  --size-height: calc(100vh - var(--size-space));
+  --color-primary:#1B5E20;
+  --color-light: #4c8c4a;
+  --color-dark:#003300;
+  --color-accent:#B9F6CA;
+  --color-background:#fff;
+  --color-text-primary-on-primary:#fff;
+  --color-text-secondary-on-primary:hsla(0,0%,100%,.7);
+  --color-text-hint-on-primary:hsla(0,0%,100%,.5);
+  --color-text-disabled-on-primary:hsla(0,0%,100%,.5);
+  --color-text-icon-on-primary:hsla(0,0%,100%,.5);
+  --color-text-primary-on-accent:#fff;
+  --color-text-secondary-on-accent:hsla(0,0%,100%,.7);
+  --color-text-hint-on-accent:hsla(0,0%,100%,.5);
+  --color-text-disabled-on-accent:hsla(0,0%,100%,.5);
+  --color-text-icon-on-accent:hsla(0,0%,100%,.5);
+  --color-text-primary-on-background:rgba(0,0,0,.87);
+  --color-text-secondary-on-background:rgba(0,0,0,.54);
+  --color-text-hint-on-background:rgba(0,0,0,.38);
+  --color-text-disabled-on-background:rgba(0,0,0,.38);
+  --color-text-icon-on-background:rgba(0,0,0,.38);
+  --color-text-primary-on-light:rgba(0,0,0,.87);
+  --color-text-secondary-on-light:rgba(0,0,0,.54);
+  --color-text-hint-on-light:rgba(0,0,0,.38);
+  --color-text-disabled-on-light:rgba(0,0,0,.38);
+  --color-text-icon-on-light:rgba(0,0,0,.38);
+  --color-text-primary-on-dark:#fff;
+  --color-text-secondary-on-dark:hsla(0,0%,100%,.7);
+  --color-text-hint-on-dark:hsla(0,0%,100%,.5);
+  --color-text-disabled-on-dark:hsla(0,0%,100%,.5);
+  --color-text-icon-on-dark:hsla(0,0%,100%,.5);
+ }
+
 body {
   margin: 0;
   padding: 0;
@@ -11,4 +48,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(150deg, #d3f9df 0%, #d3f9df 50%, #a0f1d2 50%, #a0f1d2 100%);
 }
