@@ -2,37 +2,32 @@
 :root {
   --size-font: calc(10px + 2vmin);
   --size-space: calc(10px + 2vmin);
+  --size-negative-space: calc(var(--size-space) * -1);
   --size-height: calc(100vh - var(--size-space));
+
+  --material-color-green: #4caf50;
+	--material-color-green-50: #e8f5e9;
+	--material-color-green-100: #c8e6c9;
+	--material-color-green-200: #a5d6a7;
+	--material-color-green-300: #81c784;
+	--material-color-green-400: #66bb6a;
+	--material-color-green-500: var(--material-color-green);
+	--material-color-green-600: #43a047;
+	--material-color-green-700: #388e3c;
+	--material-color-green-800: #2e7d32;
+	--material-color-green-900: #1b5e20;
+	--material-color-green-a100: #b9f6ca;
+	--material-color-green-a200: #69f0ae;
+	--material-color-green-a400: #00e676;
+  --material-color-green-a700: #00c853;
+
   --color-primary:#1B5E20;
   --color-light: #4c8c4a;
   --color-dark:#003300;
   --color-accent:#B9F6CA;
   --color-background:#fff;
   --color-text-primary-on-primary:#fff;
-  --color-text-secondary-on-primary:hsla(0,0%,100%,.7);
-  --color-text-hint-on-primary:hsla(0,0%,100%,.5);
-  --color-text-disabled-on-primary:hsla(0,0%,100%,.5);
-  --color-text-icon-on-primary:hsla(0,0%,100%,.5);
-  --color-text-primary-on-accent:#fff;
-  --color-text-secondary-on-accent:hsla(0,0%,100%,.7);
-  --color-text-hint-on-accent:hsla(0,0%,100%,.5);
-  --color-text-disabled-on-accent:hsla(0,0%,100%,.5);
-  --color-text-icon-on-accent:hsla(0,0%,100%,.5);
-  --color-text-primary-on-background:rgba(0,0,0,.87);
-  --color-text-secondary-on-background:rgba(0,0,0,.54);
-  --color-text-hint-on-background:rgba(0,0,0,.38);
-  --color-text-disabled-on-background:rgba(0,0,0,.38);
-  --color-text-icon-on-background:rgba(0,0,0,.38);
   --color-text-primary-on-light:rgba(0,0,0,.87);
-  --color-text-secondary-on-light:rgba(0,0,0,.54);
-  --color-text-hint-on-light:rgba(0,0,0,.38);
-  --color-text-disabled-on-light:rgba(0,0,0,.38);
-  --color-text-icon-on-light:rgba(0,0,0,.38);
-  --color-text-primary-on-dark:#fff;
-  --color-text-secondary-on-dark:hsla(0,0%,100%,.7);
-  --color-text-hint-on-dark:hsla(0,0%,100%,.5);
-  --color-text-disabled-on-dark:hsla(0,0%,100%,.5);
-  --color-text-icon-on-dark:hsla(0,0%,100%,.5);
  }
 
 body {

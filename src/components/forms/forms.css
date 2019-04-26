@@ -1,0 +1,13 @@
+.c-form__label{
+    color: var(--color-light);
+    font-weight: bold;
+}
+
+.c-form__submit{
+    margin: var(--size-space) var(--size-negative-space) var(--size-negative-space) var(--size-negative-space);
+    display: flex;
+}
+
+.c-form__submit > button{
+    width: 100%;
+}

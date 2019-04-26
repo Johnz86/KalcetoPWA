@@ -2,9 +2,11 @@ import * as React from 'react';
 import { InputSuggest } from '../inputs/suggest';
 import { Submit } from '../inputs/submit';
 
+import './forms.css';
+
 interface InputOptions {
-   id: string;
-   text: string; 
+    id: string;
+    text: string;
 }
 
 type Props = {
@@ -35,7 +37,7 @@ export class AddTeamForm extends React.Component<Props, State> {
 
         return (
             <form>
-                <div>
+                <div className="c-form__label">
                     <label htmlFor="teamName">Vytvor tím</label>
                 </div>
                 <div>
@@ -47,7 +49,9 @@ export class AddTeamForm extends React.Component<Props, State> {
                 <div>
                     <InputSuggest name="playerTwo" placeholder="Meno hráča" list={[]} />
                 </div>
-                <Submit text="Pridaj tím"/>
+                <div className="c-form__submit">
+                    <Submit text="Pridaj tím" />
+                </div>
             </form>
         );
     }

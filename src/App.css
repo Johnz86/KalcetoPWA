@@ -9,7 +9,6 @@
 }
 
 .App-body {
-  min-height: var(--size-height);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +19,7 @@
 
 .App-box {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
-  background: linear-gradient(to right bottom, var(--color-light), var(--color-dark));
+  background: linear-gradient(to right bottom, var(--material-color-green-100), var(--material-color-green));
   border-radius: 0;
   flex-direction: column;
   flex: 0 0 auto;
