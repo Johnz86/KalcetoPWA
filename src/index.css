@@ -2,6 +2,7 @@
 :root {
   --size-font: calc(10px + 2vmin);
   --size-space: calc(10px + 2vmin);
+  --size-half-space: calc(var(--size-space) * 0.5);
   --size-negative-space: calc(var(--size-space) * -1);
   --size-height: calc(100vh - var(--size-space));
 

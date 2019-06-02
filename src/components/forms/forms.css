@@ -1,13 +1,44 @@
-.c-form__label{
+.c-form__card {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+    background: linear-gradient(to right bottom, var(--material-color-green-100), var(--material-color-green));
+    border-radius: 0;
+    flex-direction: column;
+    flex: 0 0 auto;
+    overflow: hidden;
+    transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1000;
+}
+
+.c-form__card--title {
+    display: flex;
+    background: var(--color-dark);
+    padding: var(--size-half-space) var(--size-space);
+    text-align: left;
+    font-weight: bold;
+}
+
+.c-form__label {
     color: var(--color-light);
     font-weight: bold;
 }
 
-.c-form__submit{
-    margin: var(--size-space) var(--size-negative-space) var(--size-negative-space) var(--size-negative-space);
+.c-form__row {
+    margin: 0 var(--size-space); 
+}
+
+.c-form__card--title + .c-form__row, .c-form__row:first-child {
+    margin-top: var(--size-space);
+}
+
+.c-form__row:last-child {
+    margin-bottom: var(--size-space);
+}
+
+.c-form__submit {
+    margin-top: var(--size-space);
     display: flex;
 }
 
-.c-form__submit > button{
+.c-form__submit>button {
     width: 100%;
 }

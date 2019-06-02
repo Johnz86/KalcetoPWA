@@ -60,9 +60,7 @@ export class InputSuggest extends React.PureComponent<InputSuggestProps, InputSu
 
         return (
             <div className={this.state.focused && filteredList.length ? "c-dropdown is-open" : "c-dropdown"}>
-                {this.state.filterText.length === 0 || this.state.focused ?
-                    <input onChange={this.handleChange} className="c-button c-button--dropdown" name={this.props.name} value={this.state.filterText} placeholder={this.props.placeholder} onFocus={this.focus} onBlur={this.blur} autoComplete="off" ref={this.textInput}/> :
-                    <div className="c-button c-button--dropdown" onClick={this.focus}>{this.state.filterText}</div>}
+                <input onChange={this.handleChange} className="c-button c-button--dropdown" name={this.props.name} value={this.state.filterText} placeholder={this.props.placeholder} onFocus={this.focus} onBlur={this.blur} autoComplete="off" ref={this.textInput}/> 
                 <ul className="c-dropdown__list">
                     {filteredList.map(item => <li className="c-dropdown__item" key={item.id} onClick={() => this.pickFromList(item.text)}>{item.text}</li>)}
                 </ul>
