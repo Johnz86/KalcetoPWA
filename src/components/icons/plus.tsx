@@ -1,3 +1,4 @@
+import React from "react";
 export const PlusIcon = (props: React.SVGProps<SVGSVGElement>) => {
     return (
         <svg width="24" height="24" viewBox="0 0 24 24" {...props}>

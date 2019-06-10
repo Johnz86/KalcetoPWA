@@ -1,52 +1,46 @@
 import * as React from "react";
 import './forms.css';
 import { Submit } from "../inputs/submit";
-import { ScoreNumber } from "../inputs/score";
-import { Team } from "./types";
-import { InputSuggest } from "../inputs/suggest";
+import { Team, MatchResult } from "./types";
+import { ScorePicker } from "../inputs/picker";
+import { parseForm } from "./form-data";
+import { CloseIcon } from "../icons/close";
 
 type Props = {
     teams: Team[];
+    onSubmit: (match: MatchResult) => void;
 }
 
-type State = {
-    homeScore: number;
-    guestScore: number;
-}
+export class AddResultForm extends React.Component<Props> {
 
-export class AddResultForm extends React.Component<Props, State> {
-    readonly state: State = {
-        homeScore: 0,
-        guestScore: 0
-    };
-
-    setHomeScore = (count: number) => {
-        this.setState({ ...this.state, homeScore: count });
+    submitted = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const teamForm = new FormData(event.target as HTMLFormElement);
+        const result = { ...parseForm(teamForm), matchDate: new Date() } as MatchResult;
+        if (result.guestTeam.length && result.homeTeam.length) {
+            this.props.onSubmit({ ...parseForm(teamForm), matchDate: new Date() } as MatchResult);
+        }
     }
 
-    setGuestScore = (count: number) => {
-        this.setState({ ...this.state, guestScore: count });
-    }
-    
     render() {
-        const teams = this.props.teams.map((team, index) => ({id: index.toString(), text: team.teamName}));
-        return <form className="c-form__card">
-            <div className="c-form__card--title">
-                <label htmlFor="teamName">Zadaj výsledok zápasu</label>
-            </div>
-            <div className="c-form__row">
-                <InputSuggest name="homeTeam" placeholder="Domáci" list={teams} />
-                <span> VS </span>
-                <InputSuggest name="guestTeam" placeholder="Hostia" list={teams} />
-            </div>
-            <div className="c-form__row">
-                <ScoreNumber name="homeTeam" value={this.state.homeScore} onChange={this.setHomeScore} />
-                <span>:</span>
-                <ScoreNumber name="guestTeam" value={this.state.guestScore} onChange={this.setGuestScore} />
-            </div>
-            <div className="c-form__submit">
-                <Submit text="Pridaj Výsledok" />
-            </div>
-        </form>;
+        const teams = this.props.teams.map((team, index) => ({ id: index.toString(), text: team.teamName }));
+        return <div id="match" className="c-modal">
+            <form className="c-form__card" onSubmit={this.submitted}>
+                <div className="c-form__card--title">
+                    <div className="c-form__title--text">
+                        <label htmlFor="teamName">Zadaj výsledok zápasu</label>
+                    </div>
+                    <a href="#" title="Close"><CloseIcon className="c-icon c-form__close" /></a>
+                </div>
+                <div className="c-form__row">
+                    <ScorePicker name="home" placeholder="Domáci" list={teams} />
+                    <span className="c-form_divider"> VS </span>
+                    <ScorePicker name="guest" placeholder="Hostia" list={teams} />
+                </div>
+                <div className="c-form__submit">
+                    <Submit text="Pridaj Výsledok" />
+                </div>
+            </form>
+        </div>;
     }
 }

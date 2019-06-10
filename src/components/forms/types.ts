@@ -4,9 +4,9 @@ export interface Team {
 };
 
 export interface MatchResult {
-    homeTeam: Team;
-    guestTeam: Team;
-    homeScore: number;
-    guestScore: number;
+    homeScore: string,
+    guestScore: string; 
+    homeTeam: string;
+    guestTeam: string;
     matchDate: Date;
 }

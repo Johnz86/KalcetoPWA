@@ -1,6 +1,6 @@
 .c-dropdown {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
     text-align: left;
     margin: 1px;
 }
@@ -55,7 +55,6 @@
     text-decoration: none;
     min-height: 1em;
     min-width: 4em;
-    width: 50vw;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -78,13 +77,8 @@
     cursor: pointer;
 }
 
-/**
-   * Component: Button
-   * Modifier: Dropdown
-   * --------------------------------------------------
-   */
 .c-button--dropdown {
-    padding: 0.2em 1.4em 0.3em 0.4em;
+    padding: 0.2em 0.4em 0.3em 0.4em;
     background-color: var(--color-light);
     color: #E6E9ED;
     border-radius: 3px;
@@ -94,15 +88,4 @@
 .c-button--dropdown:hover {
     color: var(--color-text-primary-on-light);
     background-color: var(--color-accent);
-}
-
-.c-button--dropdown:after {
-    content: "";
-    position: absolute;
-    top: 40%;
-    right: 0.4em;
-    width: 0;
-    height: 0;
-    border: 0.3em solid transparent;
-    border-top-color: #E6E9ED;
 }
