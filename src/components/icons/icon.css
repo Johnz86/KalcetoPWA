@@ -1,0 +1,14 @@
+.c-icon{
+    background: var(--color-primary);
+    border-radius: 3px;
+    margin: 0 0.2em;
+    padding: 0 0.2em;
+}
+.c-icon path{
+    fill: var(--color-text-primary-on-primary);
+}
+
+.c-icon:hover{
+    cursor: pointer;
+    background: var(--color-light);
+}

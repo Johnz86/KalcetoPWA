@@ -1,0 +1,22 @@
+.material-button {
+    background: var(--color-primary);
+    color: var(--color-text-primary-on-primary);
+}
+
+.material-button {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    overflow: hidden;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.material-button:hover {
+    background: var(--color-dark);
+    transition: 0.5s;
+}

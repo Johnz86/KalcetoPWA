@@ -1,26 +1,81 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { AddTeamForm } from './components/forms/add-team';
+import { Team, MatchResult } from './components/forms/types';
+import { AddResultForm } from './components/forms/add-result';
+import { ScoreBoard } from './components/score/board';
+import { getStorageValue, setStorageValue } from './storage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type State = {
+    teams: Team[];
+    matches: MatchResult[];
+}
+
+class App extends Component<{}, State> {
+    readonly state: State = {
+        teams: [],
+        matches: []
+    };
+
+    hydrateStateWithLocalStorage() {
+        this.setState({
+            teams: getStorageValue("teams"),
+            matches: getStorageValue("matches")
+        })
+        setTimeout(this.navigateOnEmpty, 200);
+    }
+
+    navigateOnEmpty = () =>{
+        if (this.state.teams.length > 1) {
+            this.showScoreForm();
+        } else {
+            this.showTeamForm();
+        }
+    }
+
+    componentDidMount() {
+        this.hydrateStateWithLocalStorage();
+    }
+
+    teamAdded = (team: Team) => {
+        if (this.state.teams.length > 0) {
+            this.showScoreForm();
+        }
+        if (team.teamName && team.players.length) {
+            const teams = this.state.teams.concat(team);
+            this.setState({ teams: teams });
+            setStorageValue("teams", teams);
+        }
+    }
+
+    matchAdded = (match: MatchResult) => {
+        const matches = this.state.matches.concat(match);
+        this.setState({ matches: matches });
+        setStorageValue("matches", matches);
+    }
+
+    showScoreForm = () => {
+        window.location.href = "/#match";
+    }
+
+    showTeamForm = () => {
+        window.location.href = "/#team";
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <div className="App-body">
+                    <AddTeamForm onSubmit={this.teamAdded} />
+                    <AddResultForm teams={this.state.teams}
+                        onSubmit={this.matchAdded} />
+                    <ScoreBoard matches={this.state.matches}
+                        addScore={this.showScoreForm}
+                        addTeam={this.showTeamForm} />
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;

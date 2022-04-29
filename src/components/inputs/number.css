@@ -1,0 +1,21 @@
+.c-number__input{
+    -webkit-appearance: none;
+    margin: 0;
+    border: 0;
+    overflow: visible;
+    font: inherit;
+    text-transform: none;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0 0 0 0.4em;
+    background-color: var(--color-light);
+    color: #E6E9ED;
+    border-radius: 3px;
+    margin: 0 0.2em;
+    transition: background-color .2s linear;
+    width: calc(var(--size-font)*1.5);
+    text-align: center;
+}
