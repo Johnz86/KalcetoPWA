@@ -55,11 +55,11 @@ class App extends Component<{}, State> {
     }
 
     showScoreForm = () => {
-        window.location.href = "/#match";
+        window.location.href = "/KalcetoPWA/#match";
     }
 
     showTeamForm = () => {
-        window.location.href = "/#team";
+        window.location.href = "/KalcetoPWA/#team";
     }
 
     render() {

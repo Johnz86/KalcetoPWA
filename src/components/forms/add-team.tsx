@@ -49,7 +49,7 @@ export class AddTeamForm extends React.Component<Props, State> {
                             <InputNumber value={this.state.playerCount} onChange={this.setPlayerCount} />
                             <div>hráčov</div>
                         </div>
-                        <a href="#results" title="Close"><CloseIcon className="c-icon c-form__close" /></a>
+                        <a href="/KalcetoPWA/#results" title="Close"><CloseIcon className="c-icon c-form__close" /></a>
                     </div>
                     <div className="c-form__row ">
                         <InputSuggest name="teamName" placeholder="Meno tímu" />

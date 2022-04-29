@@ -30,7 +30,7 @@ export class AddResultForm extends React.Component<Props> {
                     <div className="c-form__title--text">
                         <label htmlFor="teamName">Zadaj výsledok zápasu</label>
                     </div>
-                    <a href="#results" title="Close"><CloseIcon className="c-icon c-form__close" /></a>
+                    <a href="/KalcetoPWA/#results" title="Close"><CloseIcon className="c-icon c-form__close" /></a>
                 </div>
                 <div className="c-form__row">
                     <ScorePicker name="home" placeholder="Domáci" list={teams} />

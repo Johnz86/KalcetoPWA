@@ -2,6 +2,7 @@
   "name": "kalceto-pwa",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://johnz86.github.io/KalcetoPWA/",
   "dependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
